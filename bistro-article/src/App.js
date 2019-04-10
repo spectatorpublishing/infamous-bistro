@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Quote from './Quote.js';
 import Slide from './Components/Slide';
 import Background from './Components/Background';
 
@@ -95,6 +96,9 @@ class App extends Component {
         Backgrounds.map(i => <Slide background={i} updateBackground={this.updateBackground}/>)
       }
       </div>
+<Quote width='60%' visibility='visible'>
+
+        </Quote>
     </GlobalContainer>
   }
 }
