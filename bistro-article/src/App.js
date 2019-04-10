@@ -3,6 +3,22 @@ import styled from 'styled-components';
 import Slide from './Components/Slide';
 import Background from './Components/Background';
 
+const GlobalContainer = styled.div`
+  @font-face {
+     font-family: 'redgar';
+     src: url('assets/Redgar..ttf');
+  }
+  @font-face {
+      font-family: 'merriweatherlight';
+      src: url('assets/MerriweatherSans-Light.otf')
+  }
+  @font-face {
+      font-family: 'merriweatherbold';
+      src: url('assets/MerriweatherSans-Bold.otf')
+  }
+  font-family: "redgar", sans-serif
+`
+
 const ShortTitle = styled.div`
   font-size : 1.0rem;
   padding: 0.5rem;
@@ -72,14 +88,14 @@ class App extends Component {
       </Titles>
     );
     */
-    return <div>
+    return <GlobalContainer>
       <Background background={this.state.background}/>
       <div>
       {
         Backgrounds.map(i => <Slide background={i} updateBackground={this.updateBackground}/>)
       }
       </div>
-    </div>
+    </GlobalContainer>
   }
 }
 
