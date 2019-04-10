@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import { Waypoint } from 'react-waypoint';
 import config from '../config';
 
+
+const BigH1 = styled.h1`
+  font-size: 14rem;
+  font-weight: 100;
+`
+
 const StyledSlide = styled.div`
   height: ${window.innerHeight}px;
   display: flex;
@@ -32,7 +38,7 @@ class Slide extends Component {
         onEnter={this.handleWaypointEnter}
       >
         <StyledSlide>
-        text
+        <BigH1>text</BigH1>
         </StyledSlide>
       </Waypoint>
     );

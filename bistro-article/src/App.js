@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import Quote from './Quote.js';
 import Slide from './Components/Slide';
 import Background from './Components/Background';
+import { createGlobalStyle } from 'styled-components'
 
-const GlobalContainer = styled.div`
+const GlobalStyle = createGlobalStyle`
   @font-face {
      font-family: 'redgar';
-     src: url('assets/Redgar..ttf');
+     src: url('assets/Redgar.ttf');
   }
   @font-face {
       font-family: 'merriweatherlight';
@@ -17,7 +18,9 @@ const GlobalContainer = styled.div`
       font-family: 'merriweatherbold';
       src: url('assets/MerriweatherSans-Bold.otf')
   }
-  font-family: "redgar", sans-serif
+  body {
+    font-family: "redgar", sans-serif;
+  }
 `
 
 const ShortTitle = styled.div`
@@ -89,17 +92,18 @@ class App extends Component {
       </Titles>
     );
     */
-    return <GlobalContainer>
+    return <div>
+      <GlobalStyle/>
       <Background background={this.state.background}/>
       <div>
       {
         Backgrounds.map(i => <Slide background={i} updateBackground={this.updateBackground}/>)
       }
       </div>
-<Quote width='60%' visibility='visible'>
+      <Quote width='60%' visibility='visible'>
 
         </Quote>
-    </GlobalContainer>
+    </div>
   }
 }
 
