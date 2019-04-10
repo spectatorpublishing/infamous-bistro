@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Quote from './Quote.js';
 
 const ShortTitle = styled.div`
   font-size : 1.0rem;
@@ -42,13 +43,19 @@ class App extends Component {
 
   render() {
     return (
-      <Titles>
-        <ShortTitle>HARMONY. MASTERED FROM CHAOS.</ShortTitle>
-        <LongTitle>In Miami, a Chef Sources Locally for His South Asian Desserts</LongTitle>
-        <Description>Florida’s tropical monsoon climate helps Niven Patel master the sweet side of his modern Indian menu.</Description>
-        <Circle><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Circle_-_black_simple.svg" alt="Logo" width={50} padding={100} onClick={this.onClickButton}/></Circle>
-        <div ref={this.myRef}>hiiiiii</div> >
-      </Titles>
+      <div>
+        <Titles>
+          <ShortTitle>HARMONY. MASTERED FROM CHAOS.</ShortTitle>
+          <LongTitle>In Miami, a Chef Sources Locally for His South Asian Desserts</LongTitle>
+          <Description>Florida’s tropical monsoon climate helps Niven Patel master the sweet side of his modern Indian menu.</Description>
+          <Circle><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Circle_-_black_simple.svg" alt="Logo" width={50} padding={100} onClick={this.onClickButton}/></Circle>
+          <div ref={this.myRef}>hiiiiii</div> >
+        </Titles>
+
+        <Quote width='60%' visibility='visible'>
+
+        </Quote>
+      </div>
     );
   }
 }
