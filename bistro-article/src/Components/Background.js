@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const StyledBackground = styled.div`
-  height: ${window.innerHeight}px;
+  height: ${console.log(window.innerHeight) || window.innerHeight}px;
   width: 100vw;
   position: fixed;
   background: url("${props => props.background}");

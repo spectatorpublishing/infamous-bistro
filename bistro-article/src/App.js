@@ -12,18 +12,23 @@ const GlobalStyle = createGlobalStyle`
      font-family: 'redgar';
      src: url('assets/Redgar.ttf');
   }
-  @font-face {
-      font-family: 'merriweatherlight';
-      src: url('assets/MerriweatherSans-Light.otf')
-  }
-  @font-face {
-      font-family: 'merriweatherbold';
-      src: url('assets/MerriweatherSans-Bold.otf')
-  }
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
   body {
-    font-family: "redgar", sans-serif;
     margin: 0;
+    padding: 0;
+    font-family: "redgar", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+
 `
 const Data = [{
   background: "assets/E7f8Z_fw.jpeg",

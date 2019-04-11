@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import config from '../config';
 
 const Title = styled.div`
   font-size : 4.0rem;
-  font-family: "redgar", sans-serif
-  margin-left: auto;
-  margin-right: auto;
-  margin-top:16.0rem;
+  font-family: "redgar", sans-serif;
+  font-weight: 100;
   color:white;
+
+  ${config.mobileBreakpoint} {
+    font-size: 2rem;
+  }
 `
 const Subheading = styled.div`
   font-family: redgar, sans-serif;
@@ -15,25 +18,37 @@ const Subheading = styled.div`
   font:redgar;
   display: inline-block;
   color:white;
+
+  ${config.mobileBreakpoint} {
+    font-size: 2.5rem;
+  }
 `
 
 const Titles = styled.div`
-  padding: 10.0rem;
   text-align: center;
 `
 
 const Button = styled.div`
-  margin-top:12.0rem;
+  position: absolute;
+  bottom: 1rem;
+  display: block;
+  left: 0;
   text-align: center;
+  width: 100%;
 `
 const Symbol = styled.div`
   font-family: "redgar", sans-serif;
-  color: green;
+  color: rgb(175, 212, 168);
   font-size:8rem;
   display: inline-block;
   margin-right:1.5rem;
   margin-top:-1.5rem;
-  opacity:0.5;
+
+  ${config.mobileBreakpoint} {
+    font-size: 4rem;
+    margin-right:.75rem;
+    margin-top:-.75rem;
+  }
 `
 const Img = styled.img`
   display: block;
@@ -41,6 +56,12 @@ const Img = styled.img`
   width: 22.0rem;
   margin-left: 7.0rem;
   opacity:0.7;
+
+  ${config.mobileBreakpoint} {
+    height: .5rem;
+    width: 11.0rem;
+    margin-left: 3.5rem;
+  }
 `
 
 class TitlePage extends Component {
@@ -56,16 +77,16 @@ class TitlePage extends Component {
 
   render() {
     return (
-      <Titles>
-          <Title>{this.props.title}</Title>
-          <Img src="assets/Asset 8@10x.png"/>
-          <Symbol>& </Symbol><Subheading>{this.props.subtitle}</Subheading>
-          <Button>
-            <img src="assets/arrow left.png" alt="Logo" style = {{ width : 50, height : 55, marginRight : -24}} onClick={this.onClickButton}/>
-            <img src="assets/arrow.png" alt="Logo" style = {{ width : 20, height : 80}} onClick={this.onClickButton}/>
-            <img src="assets/arrow right.png" alt="Logo" style = {{ width : 50, height : 55, marginLeft : -24 }}  onClick={this.onClickButton}/>
-          </Button>
-      </Titles>
+      <div>
+        <Titles>
+            <Title>{this.props.title}</Title>
+            <Img src="assets/Asset 8@10x.png"/>
+            <Symbol>& </Symbol><Subheading>{this.props.subtitle}</Subheading>
+        </Titles>
+        <Button>
+          <img src="assets/combined arrow.png" alt="Logo" onClick={this.onClickButton}/>
+        </Button>
+      </div>
     );
   }
 }
