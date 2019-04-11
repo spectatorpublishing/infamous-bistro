@@ -44,7 +44,7 @@ export class SecondPage extends Component {
         Amsterdam Avenue’s newest opening, Infamous Bistro, has none of that. Instead,
         light pours in through a wall of windows and into the
         <Highlight>SPACIOUS & VERDANT NEW NEIGHBORHOOD SPOT.</Highlight> 
-        <img style={{"width":"50%"}} src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
+        <img alt="green-swoop" style={{"width":"50%"}} src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
         </Wrapper>
         <Wrapper>
         On a spring afternoon, the restaurant comes alive with sunshine and the smell of the fresh cut flowers that rest on every table. But the
@@ -54,7 +54,7 @@ export class SecondPage extends Component {
         each other. In other words,
         <Highlight>A FAMILY.</Highlight>
         </Wrapper>
-        <img style={{"width":"50%"}} src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
+        <img alt="green-swoop" style={{"width":"50%"}} src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
         </Wrapper>
     );
   }

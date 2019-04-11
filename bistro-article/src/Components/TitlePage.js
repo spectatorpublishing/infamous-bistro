@@ -39,9 +39,14 @@ const Button = styled.div`
   text-align: center;
   width: 100%;
   z-index: 10;
+  pointer-events: none;
   transition-duration: 0.5s;
   @media (max-width: 600px) {
     display: none;
+  }
+
+  & img {
+    pointer-events: all;
   }
 `
 const Symbol = styled.div`
@@ -97,10 +102,10 @@ componentWillUnmount() {
 
     handleScroll(event) {
             if (window.innerHeight + window.scrollY > (document.body.clientHeight - 300)) {
-            document.getElementById('button').style.opacity='0';
+            document.getElementById('button').style.display='none';
         }
           if (window.innerHeight + window.scrollY < (document.body.clientHeight-300)) {
-            document.getElementById('button').style.opacity='1';
+            document.getElementById('button').style.display='unset';
         }
   }
 

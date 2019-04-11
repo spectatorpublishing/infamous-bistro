@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const StyledBackground = styled.div`
-  height: ${console.log(window.innerHeight) || window.innerHeight}px;
-  width: 100vw;
+  height: ${props => props.height}px;
+  width: 100%;
   position: fixed;
   background: url("${props => props.background}");
   filter: ${props => props.filter};
@@ -14,10 +14,28 @@ const StyledBackground = styled.div`
 `
 
 class Background extends Component {
+  constructor() {
+    super()
+    this.state = {
+      height: window.innerHeight
+    }
+  }
+
+  componentDidMount() {
+      window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount(){
+      window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize = () => {
+      this.setState({height: window.innerHeight})
+  };
 
   render() {
     return (
-      <StyledBackground {...this.props}/>
+      <StyledBackground {...this.state} {...this.props}/>
     );
   }
 }

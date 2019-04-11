@@ -29,10 +29,19 @@ let StyledQuestion = styled.div`
     margin-top: 4rem;
   }
 
-  ${config.mobileBreakpoint}, ${config.tabletBreakpoint} {
+  ${config.mobileBreakpoint} {
     max-width: 70vw;
     margin: 2rem auto;
     font-size: 1rem;
+    text-align: center;
+    display: block;
+  }
+
+  ${config.tabletBreakpoint} {
+    max-width: 70vw;
+    font-size: 2rem;
+    line-height: 3rem;
+    margin: 3rem auto;
     text-align: center;
     display: block;
   }
@@ -67,14 +76,18 @@ class Question extends Component {
   constructor() {
     super()
     this.handleSelect = this.handleSelect.bind(this)
+    this.questionRef = React.createRef();
   }
 
   handleSelect() {
+    if (window.innerWidth < 1000) {
+      this.questionRef.current.scrollIntoView()
+    }
     this.props.handleSelect(this.props.index)
   }
 
   render() {
-    return <StyledQuestion className={this.props.active ? "active" : ""} onMouseEnter={this.handleSelect} onClick={this.handleSelect}>{this.props.children}</StyledQuestion>
+    return <StyledQuestion ref={this.questionRef} className={this.props.active ? "active" : ""} onMouseEnter={this.handleSelect} onClick={this.handleSelect}>{this.props.children}</StyledQuestion>
   }
 }
 
@@ -88,6 +101,24 @@ class Interview extends Component {
     this.handleSelect = this.handleSelect.bind(this)
   }
 
+  componentDidMount() {
+      window.addEventListener('resize', this.handleResize);
+      this.prevWidth = window.innerWidth
+  }
+
+  componentWillUnmount(){
+      window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize = () => {
+    if (this.prevWidth > window.innerWidth && window.innerWidth < 1000) {
+      this.forceUpdate()
+    }
+    else if (this.prevWidth < window.innerWidth && window.innerWidth >= 1000) {
+      this.forceUpdate()
+    }
+  };
+
   handleSelect(i) {
     this.setState({
       response: this.props.data[i].response,
@@ -99,7 +130,7 @@ class Interview extends Component {
     if (window.innerWidth < 1000) {
       return <div>
         {
-          this.props.data.map((i, index) => <div>
+          this.props.data.map((i, index) => <div key={index}>
             <Question
               index={index}
               handleSelect={this.handleSelect}
@@ -122,6 +153,7 @@ class Interview extends Component {
       <Column>
       {
         this.props.data.map((i, index) => <Question
+          key={index}
           index={index}
           handleSelect={this.handleSelect}
           onClick={this.handleSelect}

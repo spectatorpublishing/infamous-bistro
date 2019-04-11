@@ -7,7 +7,6 @@ import FourthPage from './PageFour.js';
 import FifthPage from './PageFive.js';
 import SixthPage from './PageSix.js';
 import { createGlobalStyle } from 'styled-components';
-import ParentQuestion from './ParentQuestion.js';
 import TitlePage from './Components/TitlePage';
 import smoothscroll from 'smoothscroll-polyfill';
 import Interview from './Components/Interview';
@@ -76,6 +75,9 @@ const Data = [{
 {
   background: "https://s3.amazonaws.com/spec-imagehosting/BEx70rMU.jpeg",
   filter: "brightness(50%)",
+  slideStyle: `
+    align-items: stretch;
+  `,
   component: <Interview data={[
     {
       question: "What are some of your favorite foods from Serbia that you feel that you just cannot get done well in New York?",
@@ -102,6 +104,9 @@ const Data = [{
 {
   background: "https://s3.amazonaws.com/spec-imagehosting/F5TPvFN8.jpeg",
   filter: "brightness(50%)",
+  slideStyle: `
+    align-items: stretch;
+  `,
   component: <Interview data={[{
     question: "What are some of your favorite foods from Serbia that you feel that you just cannot get done well in New York?",
     response: "“Kafana is very good! Barbecue in general, rostilj, is my favorite, and it’s very hard to find here. Maybe a good old sarma. Homemade ajvar is never good in New York either, you can’t get it anywhere the way you can get it at home.”"
@@ -130,10 +135,6 @@ class App extends Component {
     }
     this.updateBackground = this.updateBackground.bind(this)
   }
-  
-  onClickButton(){
-    window.scrollTo(0, 1000);
-  }
 
   updateBackground(i) {
     this.setState({
@@ -157,7 +158,7 @@ class App extends Component {
       <Background {...this.state.background}/>
       <div>
       {
-        Data.map((i, index) => <Slide key={index} index={index} updateBackground={this.updateBackground}>{i.component}</Slide>)
+        Data.map((i, index) => <Slide key={index} slideStyle={i.slideStyle} index={index} updateBackground={this.updateBackground}>{i.component}</Slide>)
       }
       </div>
     </div>

@@ -42,12 +42,12 @@ export class FifthPage extends Component {
         <Wrapper>
         Chef/owner Zivko Radojcic grew up in Belgrade, Serbia’s capital, and
         <Highlight> CAME FROM a family of pastry chefs and cooks. </Highlight>
-        <img style={{"width":"50%", "float":"right","display":"block"}} src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
+        <img alt="green-swoop" style={{"width":"50%", "float":"right","display":"block"}} src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
         </Wrapper>
         <Wrapper>
         One of his aunts was, in fact, a pastry chef for Tito, the Former President of Yugoslavia. His grandmother owned a restaurant in France before moving to Serbia. And though cooking is in his blood and in his bones, Radojcic had not always planned to be a chef. Instead, his first passion was soccer, which he played throughout culinary school and then played professionally after he graduated. But, as a goalie, he had to exert himself and sustain injuries often, and he decided to keep playing soccer, but only as a hobby. After that, he worked in restaurants in Belgrade, and then in New York,
         <Highlight> making a name for himself in a new city. </Highlight>
-        <img style={{"width":"50%","float":"right"}} src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
+        <img alt="green-swoop" style={{"width":"50%","float":"right"}} src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
         </Wrapper>
         </Wrapper>
     );
