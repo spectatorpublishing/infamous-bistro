@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-<<<<<<< HEAD
-import Question from 'Question.js';
-=======
 import Quote from './Quote.js';
 import Slide from './Components/Slide';
 import Background from './Components/Background';
@@ -25,7 +22,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: "redgar", sans-serif;
   }
 `
->>>>>>> b100c5d867a0ac3308b39be740d78a606fb28627
 
 const ShortTitle = styled.div`
   font-size : 1.0rem;
