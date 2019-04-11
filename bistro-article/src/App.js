@@ -90,6 +90,7 @@ class App extends Component {
         <Circle><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Circle_-_black_simple.svg" alt="Logo" width={50} padding={100} onClick={this.onClickButton}/></Circle>
         <div ref={this.myRef}>hiiiiii</div> >
       </Titles>
+
     );
     */
     return <div>
