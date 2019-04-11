@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Quote from './Quote.js';
 import Slide from './Components/Slide';
 import Background from './Components/Background';
+import TitlePage from './Components/TitlePage';
 import { createGlobalStyle } from 'styled-components';
-import ParentQuestion from './ParentQuestion.js'
+import ParentQuestion from './ParentQuestion.js';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -24,9 +25,9 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 const Data = [{
+  component: <TitlePage title={"ROOTS, INFLUENCES,"} subtitle={"GOOD FOOD"}/>
   background: "assets/E7f8Z_fw.jpeg",
   filter: "brightness(50%)",
-  component: <div>Test</div>
 },
 {
   background: "assets/3WTtONsY.jpeg",
