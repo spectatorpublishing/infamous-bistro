@@ -23,22 +23,29 @@ const Right = styled.div`
     flex-grow: 1;
     display: flex;
     flex-direction: column-reverse;
-    align-tiems: flex-start;
+    align-items: flex-start;
 `
 
 const TextQuote = styled.div`
     flex-grow: 10;
     font-size: 2rem;
-    padding-top: 1.5rem;
-    padding-bottom: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    font-family: 'merriweatherlight';
+    color: white;
 `
 
 const LetterQuote = styled.span`
     font-size: 5rem;
+    color: #98d8a1;
+    font-family: 'merriweatherbold';
 `
 
 const Author = styled.div`
     visibility: ${(props) => props.visibility};
+    font-size: 1.5rem
+    font-family: 'merriweatherlight';
+    color: white;
 `
 
 class Quote extends Component {

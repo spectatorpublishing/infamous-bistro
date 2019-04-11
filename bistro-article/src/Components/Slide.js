@@ -38,7 +38,7 @@ class Slide extends Component {
         onEnter={this.handleWaypointEnter}
       >
         <StyledSlide>
-        <BigH1>text</BigH1>
+        {this.props.children}
         </StyledSlide>
       </Waypoint>
     );
