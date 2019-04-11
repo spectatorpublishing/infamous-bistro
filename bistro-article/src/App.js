@@ -23,12 +23,22 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Backgrounds = [
-  "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://cdn.pixabay.com/photo/2019/02/16/01/18/dog-3999619_1280.jpg",
-  "https://c.pxhere.com/photos/b9/d8/dogs_puppies_play_two_group_in_the_free_nature_pet-652302.jpg!d",
-  "http://www.dodlive.mil/files/2013/03/829140.jpg"
-]
+const Data = [{
+  background: "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  component: <div>Test</div>
+},
+{
+  background: "https://cdn.pixabay.com/photo/2019/02/16/01/18/dog-3999619_1280.jpg",
+  component: <div>Test</div>
+},
+{
+  background: "https://c.pxhere.com/photos/b9/d8/dogs_puppies_play_two_group_in_the_free_nature_pet-652302.jpg!d",
+  component: <div>Test</div>
+},
+{
+  background: "http://www.dodlive.mil/files/2013/03/829140.jpg",
+  component: <div>Test</div>
+}]
 
 class App extends Component {
 
@@ -54,7 +64,7 @@ class App extends Component {
       <Background background={this.state.background}/>
       <div>
       {
-        Backgrounds.map(i => <Slide background={i} updateBackground={this.updateBackground}/>)
+        Data.map(i => <Slide background={i.background} updateBackground={this.updateBackground}>{i.component}</Slide>)
       }
       </div>
       <Quote width='60%' visibility='visible'>
