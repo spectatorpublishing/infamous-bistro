@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import Quote from './Quote.js';
 import Slide from './Components/Slide';
 import Background from './Components/Background';
-<<<<<<< HEAD
 import SecondPage from './PageTwo.js';
-import { createGlobalStyle } from 'styled-components'
-=======
 import { createGlobalStyle } from 'styled-components';
-import ParentQuestion from './ParentQuestion.js'
->>>>>>> 2f6534dc05a86a913ccbf963102a2b420106773a
+import ParentQuestion from './ParentQuestion.js';
+import TitlePage from './Components/TitlePage';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -29,9 +26,9 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 const Data = [{
+  component: <TitlePage title={"ROOTS, INFLUENCES,"} subtitle={"GOOD FOOD"}/>
   background: "assets/E7f8Z_fw.jpeg",
   filter: "brightness(50%)",
-  component: <div>Test</div>
 },
 {
   background: "assets/3WTtONsY.jpeg",
@@ -60,14 +57,9 @@ const Data = [{
   component: <ParentQuestion></ParentQuestion>
 },
 {
-<<<<<<< HEAD
-  background: "https://c.pxhere.com/photos/b9/d8/dogs_puppies_play_two_group_in_the_free_nature_pet-652302.jpg!d",
-  component: <SecondPage/>
-=======
   background: "assets/MRsfi4Z4.jpeg",
   filter: "brightness(50%)",
-  component: <div>Test</div>
->>>>>>> 2f6534dc05a86a913ccbf963102a2b420106773a
+  component: <SecondPage/>
 },
 {
   background: "assets/BEx70rMU.jpeg",
