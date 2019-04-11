@@ -29,7 +29,7 @@ const Data = [{
 },
 {
   background: "https://cdn.pixabay.com/photo/2019/02/16/01/18/dog-3999619_1280.jpg",
-  component: <Quote></Quote>
+  component: <Quote width='60%' visibility='visible'></Quote>
 },
 {
   background: "https://c.pxhere.com/photos/b9/d8/dogs_puppies_play_two_group_in_the_free_nature_pet-652302.jpg!d",
@@ -67,9 +67,6 @@ class App extends Component {
         Data.map(i => <Slide background={i.background} updateBackground={this.updateBackground}>{i.component}</Slide>)
       }
       </div>
-      <Quote width='60%' visibility='visible'>
-
-        </Quote>
     </div>
   }
 }
