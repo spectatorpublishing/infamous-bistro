@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import './global-styles.js';
-import GlobalStyle from './global-styles.js';
+import GlobalStyle from '../global-styles.js';
 
 const Prompt = styled.div`
-   font-size: 1.0rem;
+   font-size: 5.0rem;
    @font-face: redgar;
 `
 const PrettyLine = styled.div`

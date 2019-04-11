@@ -34,7 +34,8 @@ const Data = [{
 },
 {
   background: "https://c.pxhere.com/photos/b9/d8/dogs_puppies_play_two_group_in_the_free_nature_pet-652302.jpg!d",
-  component: <div>Test</div>
+  component: <Question>Hello</Question>
+            
 },
 {
   background: "http://www.dodlive.mil/files/2013/03/829140.jpg",
@@ -70,7 +71,7 @@ class App extends Component {
       </div>
       
       <Quote width='60%' visibility='visible'>
-      </Quote><Question>Hello</Question>
+      </Quote>
     </div>
   }
 }
