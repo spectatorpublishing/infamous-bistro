@@ -26,9 +26,9 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 const Data = [{
-  component: <TitlePage title={"ROOTS, INFLUENCES,"} subtitle={"GOOD FOOD"}/>
   background: "assets/E7f8Z_fw.jpeg",
   filter: "brightness(50%)",
+  component: <TitlePage title={"ROOTS, INFLUENCES,"} subtitle={"GOOD FOOD"}/>
 },
 {
   background: "assets/3WTtONsY.jpeg",
