@@ -20,7 +20,11 @@ class Question extends Component {
          <div>
          <GlobalStyle/>
          <Prompt>{this.props.children}</Prompt>
+<<<<<<< HEAD:bistro-article/src/Components/Question.js
          <PrettyLine><img src="/asset/arrow.png"/></PrettyLine>
+=======
+         <PrettyLine><img src="../asset/Asset 8@10x.png"/></PrettyLine>
+>>>>>>> 340cd5fad464c9b5ee63b15d1339e0102387a884:bistro-article/src/Question.js
          </div>
       );
    }
