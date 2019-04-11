@@ -34,7 +34,7 @@ const Data = [{
 },
 {
   background: "https://c.pxhere.com/photos/b9/d8/dogs_puppies_play_two_group_in_the_free_nature_pet-652302.jpg!d",
-  component: <Question>Hello</Question>
+  component: <Question>How many chucks could a woodchuck chuck?</Question>
             
 },
 {
