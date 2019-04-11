@@ -1,6 +1,8 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
+  html {
+
   @font-face {
      font-family: 'redgar';
      src: url('assets/Redgar..ttf');
@@ -13,4 +15,8 @@ injectGlobal`
     font-family: 'merriweatherbold';
     src: url('assets/MerriweatherSans-Bold.otf')
 }
+}
+
 `
+
+export default GlobalStyle;
