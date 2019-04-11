@@ -30,7 +30,7 @@ const Data = [{
 },
 {
   background: "https://cdn.pixabay.com/photo/2019/02/16/01/18/dog-3999619_1280.jpg",
-  component: <div>Test</div>
+  component: <Quote></Quote>
 },
 {
   background: "https://c.pxhere.com/photos/b9/d8/dogs_puppies_play_two_group_in_the_free_nature_pet-652302.jpg!d",
