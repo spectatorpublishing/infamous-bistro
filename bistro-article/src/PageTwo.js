@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import './global-styles.js';
 
 const Wrapper = styled.div`
     display: inline-block;
     width: 51vw;
     font-size: 1.5rem;
     line-height: 3.5rem;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
     color: white;
 
     @media (max-width: 600px) {

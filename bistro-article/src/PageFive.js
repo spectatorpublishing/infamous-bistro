@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import './global-styles.js';
 
 const Wrapper = styled.div`
     display: inline-block;

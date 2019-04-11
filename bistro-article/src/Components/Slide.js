@@ -5,7 +5,7 @@ import config from '../config';
 
 
 const StyledSlide = styled.div`
-  height: ${window.innerHeight}px;
+  min-height: ${window.innerHeight}px;
   display: flex;
   justify-content: center;
   align-items: center;
