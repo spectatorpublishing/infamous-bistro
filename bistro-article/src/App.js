@@ -4,6 +4,7 @@ import Quote from './Quote.js';
 import Slide from './Components/Slide';
 import Background from './Components/Background';
 import { createGlobalStyle } from 'styled-components'
+import Question from './Components/Question';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -57,9 +58,9 @@ class App extends Component {
         Backgrounds.map(i => <Slide background={i} updateBackground={this.updateBackground}/>)
       }
       </div>
+      
       <Quote width='60%' visibility='visible'>
-
-        </Quote>
+      </Quote><Question>Hello</Question>
     </div>
   }
 }
