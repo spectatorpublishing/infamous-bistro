@@ -10,7 +10,7 @@ const StyledSlide = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-
+  width: 100vw;
   &:not(:first-child){
     margin-top: ${config.slidePadding};
   }
