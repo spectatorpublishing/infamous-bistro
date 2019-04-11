@@ -4,11 +4,6 @@ import { Waypoint } from 'react-waypoint';
 import config from '../config';
 
 
-const BigH1 = styled.h1`
-  font-size: 14rem;
-  font-weight: 100;
-`
-
 const StyledSlide = styled.div`
   height: ${window.innerHeight}px;
   display: flex;
@@ -26,16 +21,25 @@ class Slide extends Component {
   constructor() {
     super()
     this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
+    this.handleWaypointLeave = this.handleWaypointLeave.bind(this)
   }
 
-  handleWaypointEnter() {
-    this.props.updateBackground(this.props.background)
+  handleWaypointEnter(i) {
+    if (i.currentPosition !== "below")
+      this.props.updateBackground(this.props.index)
+  }
+
+  handleWaypointLeave(i) {
+    if (i.currentPosition === "below")
+      this.props.updateBackground(this.props.index - 1)
   }
 
   render() {
     return (
       <Waypoint
         onEnter={this.handleWaypointEnter}
+        onLeave={this.handleWaypointLeave}
+        fireOnRapidScroll={true}
       >
         <StyledSlide>
         {this.props.children}
