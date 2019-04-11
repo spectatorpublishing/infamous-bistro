@@ -4,11 +4,6 @@ import { Waypoint } from 'react-waypoint';
 import config from '../config';
 
 
-const BigH1 = styled.h1`
-  font-size: 14rem;
-  font-weight: 100;
-`
-
 const StyledSlide = styled.div`
   height: ${window.innerHeight}px;
   display: flex;

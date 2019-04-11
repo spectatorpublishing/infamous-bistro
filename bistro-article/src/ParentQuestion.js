@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import './global-styles.js';
-import GlobalStyle from './global-styles.js';
-import Question from './Question.js'
 import Quote from './Quote.js'
 
 const Wrapper = styled.div`
@@ -29,7 +26,6 @@ class ParentQuestion extends Component {
    render() {
       return (
         <Wrapper>
-            <GlobalStyle/>
             <Left>
                 hello
             </Left>

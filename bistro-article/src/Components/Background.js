@@ -6,6 +6,7 @@ const StyledBackground = styled.div`
   width: 100vw;
   position: fixed;
   background: url("${props => props.background}");
+  filter: ${props => props.filter};
   background-repeat: no-repeat;
   background-size: cover;
   transition: background 1s;

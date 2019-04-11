@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import Quote from './Quote.js';
 import Slide from './Components/Slide';
 import Background from './Components/Background';
@@ -21,14 +20,17 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: "redgar", sans-serif;
+    margin: 0;
   }
 `
 const Data = [{
   background: "assets/E7f8Z_fw.jpeg",
+  filter: "brightness(50%)",
   component: <div>Test</div>
 },
 {
   background: "assets/3WTtONsY.jpeg",
+  filter: "brightness(50%)",
   component: <Quote width='60%' visibility='visible'
   text='My title used to be general manager, but I didn’t like that. I
   mean, I’m not managing anybody. I see these people every
@@ -39,61 +41,34 @@ const Data = [{
 },
 {
   background: "assets/Jo8urKb0.jpeg",
+  filter: "brightness(50%)",
   component: <div>Test</div>
 },
 {
   background: "assets/aHCUHV5A.jpeg",
+  filter: "brightness(50%)",
   component: <div>Test</div>
 },
 {
   background: "assets/JxC-hreR.jpeg",
+  filter: "brightness(50%)",
   component: <ParentQuestion></ParentQuestion>
 },
 {
   background: "assets/MRsfi4Z4.jpeg",
+  filter: "brightness(50%)",
   component: <div>Test</div>
 },
 {
   background: "assets/BEx70rMU.jpeg",
+  filter: "brightness(50%)",
   component: <div>Test</div>
 },
 {
   background: "assets/F5TPvFN8.jpeg",
+  filter: "brightness(50%)",
   component: <div>Test</div>
 }]
-
-const ShortTitle = styled.div`
-  font-size : 1.0rem;
-  padding: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
-`
-const LongTitle = styled.div`
-  font-size: 3.0rem;
-  width: 60vw;
-  padding: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
-`
-const Description = styled.div`
-  font-size: 1.5rem;
-  width: 40vw;
-  margin-left: auto;
-  margin-right: auto;
-`
-const Titles = styled.div`
-  padding: 10.0rem;
-  text-align: center;
-`
-
-const Circle = styled.div`
-  padding: 2.0rem;
-  text-align: center;
-`
-const content = styled.div`
-  padding: 10.0rem;
-  text-align: center;
-`
 
 class App extends Component {
 
@@ -111,17 +86,27 @@ class App extends Component {
 
   updateBackground(i) {
     this.setState({
-      background: Data[i].background
+      background: Data[i]
     })
+    if (i > 1 && !Data[i - 1].preloaded) {
+      let img = new Image()
+      img.src = Data[i - 1].background
+      Data[i - 1].preloaded = true
+    }
+    if (i < Data.length - 1 && !Data[i + 1].preloaded) {
+      let img = new Image()
+      img.src = Data[i + 1].background
+      Data[i + 1].preloaded = true
+    }
   }
 
   render() {
     return <div>
       <GlobalStyle/>
-      <Background background={this.state.background}/>
+      <Background {...this.state.background}/>
       <div>
       {
-        Data.map((i, index) => <Slide index={index} updateBackground={this.updateBackground}>{i.component}</Slide>)
+        Data.map((i, index) => <Slide key={index} index={index} updateBackground={this.updateBackground}>{i.component}</Slide>)
       }
       </div>
     </div>
