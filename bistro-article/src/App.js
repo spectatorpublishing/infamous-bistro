@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import Quote from './Quote.js';
 import Slide from './Components/Slide';
 import Background from './Components/Background';
 import TitlePage from './Components/TitlePage';
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
+import ParentQuestion from './ParentQuestion.js';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -21,23 +21,53 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: "redgar", sans-serif;
+    margin: 0;
   }
 `
-
 const Data = [{
-  background: "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   component: <TitlePage title={"ROOTS, INFLUENCES,"} subtitle={"GOOD FOOD"}/>
+  background: "assets/E7f8Z_fw.jpeg",
+  filter: "brightness(50%)",
 },
 {
-  background: "https://cdn.pixabay.com/photo/2019/02/16/01/18/dog-3999619_1280.jpg",
-  component: <Quote></Quote>
+  background: "assets/3WTtONsY.jpeg",
+  filter: "brightness(50%)",
+  component: <Quote width='60%' visibility='visible'
+  text='My title used to be general manager, but I didn’t like that. I
+  mean, I’m not managing anybody. I see these people every
+  day and, even when we’re not at work, we’re still together and
+  hanging out. We’re friends, but we’re also family. I’m not a
+  manager of my family.'
+  quote='- Jelena, Creative Director of Infamous Bistro '> </Quote>
 },
 {
-  background: "https://c.pxhere.com/photos/b9/d8/dogs_puppies_play_two_group_in_the_free_nature_pet-652302.jpg!d",
+  background: "assets/Jo8urKb0.jpeg",
+  filter: "brightness(50%)",
   component: <div>Test</div>
 },
 {
-  background: "http://www.dodlive.mil/files/2013/03/829140.jpg",
+  background: "assets/aHCUHV5A.jpeg",
+  filter: "brightness(50%)",
+  component: <div>Test</div>
+},
+{
+  background: "assets/JxC-hreR.jpeg",
+  filter: "brightness(50%)",
+  component: <ParentQuestion></ParentQuestion>
+},
+{
+  background: "assets/MRsfi4Z4.jpeg",
+  filter: "brightness(50%)",
+  component: <div>Test</div>
+},
+{
+  background: "assets/BEx70rMU.jpeg",
+  filter: "brightness(50%)",
+  component: <div>Test</div>
+},
+{
+  background: "assets/F5TPvFN8.jpeg",
+  filter: "brightness(50%)",
   component: <div>Test</div>
 }]
 
@@ -46,7 +76,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      background: null
+      background: []
     }
     this.updateBackground = this.updateBackground.bind(this)
   }
@@ -56,21 +86,30 @@ class App extends Component {
   }
 
   updateBackground(i) {
-    this.setState({background: i})
+    this.setState({
+      background: Data[i]
+    })
+    if (i > 1 && !Data[i - 1].preloaded) {
+      let img = new Image()
+      img.src = Data[i - 1].background
+      Data[i - 1].preloaded = true
+    }
+    if (i < Data.length - 1 && !Data[i + 1].preloaded) {
+      let img = new Image()
+      img.src = Data[i + 1].background
+      Data[i + 1].preloaded = true
+    }
   }
 
   render() {
     return <div>
       <GlobalStyle/>
-      <Background background={this.state.background}/>
+      <Background {...this.state.background}/>
       <div>
       {
-        Data.map(i => <Slide background={i.background} updateBackground={this.updateBackground}>{i.component}</Slide>)
+        Data.map((i, index) => <Slide key={index} index={index} updateBackground={this.updateBackground}>{i.component}</Slide>)
       }
       </div>
-      <Quote width='60%' visibility='visible'>
-
-        </Quote>
     </div>
   }
 }
