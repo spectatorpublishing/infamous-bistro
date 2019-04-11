@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Question from 'Question.js';
 
 const ShortTitle = styled.div`
   font-size : 1.0rem;
@@ -49,6 +50,7 @@ class App extends Component {
         <Circle><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Circle_-_black_simple.svg" alt="Logo" width={50} padding={100} onClick={this.onClickButton}/></Circle>
         <div ref={this.myRef}>hiiiiii</div> >
       </Titles>
+
     );
   }
 }
