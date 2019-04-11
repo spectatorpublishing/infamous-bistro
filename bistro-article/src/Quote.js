@@ -16,7 +16,7 @@ const Left = styled.div`
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-tiems: flex-start;
+    align-items: flex-start;
 `
 
 const Right = styled.div`
@@ -53,9 +53,8 @@ class Quote extends Component {
     render() {
         return (
             <Body width={this.props.width}>
+                <GlobalStyles/>
                 <Wrapper>
-                    <GlobalStyles/>
-                    
                     <Left>
                         <LetterQuote> 
                             "
@@ -63,11 +62,7 @@ class Quote extends Component {
                     </Left>
                     
                     <TextQuote>
-                    My title used to be general manager, but I didn’t like that. I
-                    mean, I’m not managing anybody. I see these people every
-                    day and, even when we’re not at work, we’re still together and
-                    hanging out. We’re friends, but we’re also family. I’m not a
-                    manager of my family. 
+                        {this.props.text}
                     </TextQuote>
 
                     <Right>
@@ -78,7 +73,7 @@ class Quote extends Component {
                 </Wrapper>
 
                 <Author visibility={this.props.visibility}>
-                    - Jelena, Creative Director of Infamous Bistro 
+                    {this.props.quote}
                 </Author>
             </Body>
         );
