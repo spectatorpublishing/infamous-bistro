@@ -13,37 +13,37 @@ const Wrapper = styled.div`
     font-family: 'redgar';
 `
 const Left = styled.div`
-    flex-grow: 1;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 `
 
 const Right = styled.div`
-    flex-grow: 1;
+    flex: 1;
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
 `
 
 const TextQuote = styled.div`
-    flex-grow: 10;
-    font-size: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+    flex: 10;
+    font-size: 2em;
+    padding-top: 2em;
+    padding-bottom: 4em;
     font-family: 'merriweatherlight';
     color: white;
 `
 
 const LetterQuote = styled.span`
-    font-size: 5rem;
+    font-size: 5em;
     color: #98d8a1;
     font-family: 'merriweatherbold';
 `
 
 const Author = styled.div`
     visibility: ${(props) => props.visibility};
-    font-size: 1.5rem
+    font-size: 1.5em
     font-family: 'merriweatherlight';
     color: white;
 `

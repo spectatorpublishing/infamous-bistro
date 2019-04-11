@@ -7,17 +7,21 @@ import Quote from './Quote.js'
 
 const Wrapper = styled.div`
     display: flex;
+    align-items: stretch;
+    font-size: 0.75rem;
 `
 const Left = styled.div`
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 `
 
 const Right = styled.div`
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 `
 
 
@@ -27,7 +31,7 @@ class ParentQuestion extends Component {
         <Wrapper>
             <GlobalStyle/>
             <Left>
-
+                hello
             </Left>
 
             <Right>
