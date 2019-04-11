@@ -52,7 +52,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      background: null
+      background: []
     }
     this.updateBackground = this.updateBackground.bind(this)
   }
@@ -62,7 +62,9 @@ class App extends Component {
   }
 
   updateBackground(i) {
-    this.setState({background: i})
+    this.setState({
+      background: Data[i].background
+    })
   }
 
   render() {
@@ -71,7 +73,7 @@ class App extends Component {
       <Background background={this.state.background}/>
       <div>
       {
-        Data.map(i => <Slide background={i.background} updateBackground={this.updateBackground}>{i.component}</Slide>)
+        Data.map((i, index) => <Slide index={index} updateBackground={this.updateBackground}>{i.component}</Slide>)
       }
       </div>
     </div>

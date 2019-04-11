@@ -26,16 +26,25 @@ class Slide extends Component {
   constructor() {
     super()
     this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
+    this.handleWaypointLeave = this.handleWaypointLeave.bind(this)
   }
 
-  handleWaypointEnter() {
-    this.props.updateBackground(this.props.background)
+  handleWaypointEnter(i) {
+    if (i.currentPosition !== "below")
+      this.props.updateBackground(this.props.index)
+  }
+
+  handleWaypointLeave(i) {
+    if (i.currentPosition === "below")
+      this.props.updateBackground(this.props.index - 1)
   }
 
   render() {
     return (
       <Waypoint
         onEnter={this.handleWaypointEnter}
+        onLeave={this.handleWaypointLeave}
+        fireOnRapidScroll={true}
       >
         <StyledSlide>
         {this.props.children}
