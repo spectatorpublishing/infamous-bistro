@@ -79,7 +79,10 @@ class TitlePage extends Component {
   }
 
     handleClick(){
-        window.scrollBy(0, (window.innerHeight+(10 * parseFloat(getComputedStyle(document.documentElement).fontSize))));
+      window.scrollBy({
+        top: (window.innerHeight+(10 * parseFloat(getComputedStyle(document.documentElement).fontSize))),
+        behavior: 'smooth'
+      });
     }
 
   render() {

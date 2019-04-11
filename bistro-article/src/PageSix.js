@@ -3,10 +3,11 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
     display: inline-block;
-    width: 51vw;
+    width: 80vw;
     font-size: 1.8rem;
     line-height: 3.8rem;
     font-family: 'Roboto';
+    font-weight: 100;
     color: white;
     text-align: center;
     @media (max-width: 600px) {
