@@ -39,6 +39,7 @@ const Button = styled.div`
   text-align: center;
   width: 100%;
   z-index: 10;
+  transition-duration: 0.5s;
   @media (max-width: 600px) {
     display: none;
   }
@@ -76,6 +77,7 @@ class TitlePage extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
     handleClick(){
@@ -85,6 +87,23 @@ class TitlePage extends Component {
       });
     }
 
+    componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+}
+
+componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+}
+
+    handleScroll(event) {
+            if (window.innerHeight + window.scrollY > (document.body.clientHeight - 300)) {
+            document.getElementById('button').style.opacity='0';
+        }
+          if (window.innerHeight + window.scrollY < (document.body.clientHeight-300)) {
+            document.getElementById('button').style.opacity='1';
+        }
+  }
+
   render() {
     return (
       <div>
@@ -93,7 +112,7 @@ class TitlePage extends Component {
             <Img src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
             <Symbol>& </Symbol><Subheading>{this.props.subtitle}</Subheading>
         </Titles>
-        <Button>
+        <Button id="button">
           <img src="https://s3.amazonaws.com/spec-imagehosting/combined+arrow.png" alt="Logo" onClick={this.handleClick}/>
         </Button>
       </div>

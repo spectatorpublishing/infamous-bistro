@@ -46,7 +46,7 @@ let StyledQuestion = styled.div`
     width: 100%;
     box-sizing: border-box;
     position: absolute;
-    background: url("assets/Asset 8@10x.png");
+    background: url("https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png");
     background-position: center center;
     background-size: 100% 100%;
     height: .5rem;
