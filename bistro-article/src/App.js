@@ -22,23 +22,71 @@ const GlobalStyle = createGlobalStyle`
     font-family: "redgar", sans-serif;
   }
 `
-
 const Data = [{
-  background: "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  background: "assets/E7f8Z_fw.jpeg",
   component: <div>Test</div>
 },
 {
-  background: "https://cdn.pixabay.com/photo/2019/02/16/01/18/dog-3999619_1280.jpg",
-  component: <Quote width='60%' visibility='visible'></Quote>
+  background: "assets/3WTtONsY.jpeg",
+  component: <Quote></Quote>
 },
 {
-  background: "https://c.pxhere.com/photos/b9/d8/dogs_puppies_play_two_group_in_the_free_nature_pet-652302.jpg!d",
+  background: "assets/Jo8urKb0.jpeg",
   component: <div>Test</div>
 },
 {
-  background: "http://www.dodlive.mil/files/2013/03/829140.jpg",
+  background: "assets/aHCUHV5A.jpeg",
+  component: <div>Test</div>
+},
+{
+  background: "assets/JxC-hreR.jpeg",
+  component: <div>Test</div>
+},
+{
+  background: "assets/MRsfi4Z4.jpeg",
+  component: <div>Test</div>
+},
+{
+  background: "assets/BEx70rMU.jpeg",
+  component: <div>Test</div>
+},
+{
+  background: "assets/F5TPvFN8.jpeg",
   component: <div>Test</div>
 }]
+
+const ShortTitle = styled.div`
+  font-size : 1.0rem;
+  padding: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+`
+const LongTitle = styled.div`
+  font-size: 3.0rem;
+  width: 60vw;
+  padding: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+`
+const Description = styled.div`
+  font-size: 1.5rem;
+  width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+`
+const Titles = styled.div`
+  padding: 10.0rem;
+  text-align: center;
+`
+
+const Circle = styled.div`
+  padding: 2.0rem;
+  text-align: center;
+`
+const content = styled.div`
+  padding: 10.0rem;
+  text-align: center;
+`
 
 class App extends Component {
 
