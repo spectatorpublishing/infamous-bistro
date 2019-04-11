@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import Quote from './Quote.js';
 import Slide from './Components/Slide';
 import Background from './Components/Background';
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
+import ParentQuestion from './ParentQuestion.js'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -29,7 +30,13 @@ const Data = [{
 },
 {
   background: "https://cdn.pixabay.com/photo/2019/02/16/01/18/dog-3999619_1280.jpg",
-  component: <Quote width='60%' visibility='visible'></Quote>
+  component: <Quote width='60%' visibility='visible'
+  text='My title used to be general manager, but I didn’t like that. I
+  mean, I’m not managing anybody. I see these people every
+  day and, even when we’re not at work, we’re still together and
+  hanging out. We’re friends, but we’re also family. I’m not a
+  manager of my family.'
+  quote='- Jelena, Creative Director of Infamous Bistro '> </Quote>
 },
 {
   background: "https://c.pxhere.com/photos/b9/d8/dogs_puppies_play_two_group_in_the_free_nature_pet-652302.jpg!d",
@@ -37,7 +44,7 @@ const Data = [{
 },
 {
   background: "http://www.dodlive.mil/files/2013/03/829140.jpg",
-  component: <div>Test</div>
+  component: <ParentQuestion></ParentQuestion>
 }]
 
 class App extends Component {
