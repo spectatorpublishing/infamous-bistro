@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Quote from './Quote.js';
 import Slide from './Components/Slide';
 import Background from './Components/Background';
+import TitlePage from './Components/TitlePage';
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -25,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Data = [{
   background: "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  component: <div>Test</div>
+  component: <TitlePage title={"ROOTS, INFLUENCES,"} subtitle={"GOOD FOOD"}/>
 },
 {
   background: "https://cdn.pixabay.com/photo/2019/02/16/01/18/dog-3999619_1280.jpg",
