@@ -39,14 +39,14 @@ export class FourthPage extends Component {
   render() {
     return (
         <Wrapper>
-        <img style={{"width":"50%"}} src="./assets/Asset 8@10x.png"/>
+        <img style={{"width":"50%"}} src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
         <Highlight> This theme of family and close connection </Highlight>
         extends to everything at Infamous Bistro. Many members of the staff, from the kitchen to the front of the house and then back to
 the owners of the restaurant, are from Balkan Europe. As a result, English flows in and out of Serbian, and the staff are able to converse fluently on more than one plane. Jelena and other members of the front of the house remarked on how much of the culture of Serbia, how much of the
         <Highlight>friendliness, compassion, & loyalty</Highlight>
         that she associates with her first home country, carries over into the restaurant because the staff has a large Balkan representation. But family is present at Infamous Bistro
         <Highlight> BEYOND SHARED NATIONAL IDENTITIES. </Highlight>
-        <img style={{"width":"50%","float":"right","margin-top": "1rem"}} src="./assets/Asset 8@10x.png"/>
+        <img style={{"width":"50%","float":"right","margin-top": "1rem"}} src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
         </Wrapper>
     );
   }

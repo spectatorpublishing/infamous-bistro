@@ -90,11 +90,11 @@ class TitlePage extends Component {
       <div>
         <Titles>
             <Title>{this.props.title}</Title>
-            <Img src="assets/Asset 8@10x.png"/>
+            <Img src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
             <Symbol>& </Symbol><Subheading>{this.props.subtitle}</Subheading>
         </Titles>
         <Button>
-          <img src="assets/combined arrow.png" alt="Logo" onClick={this.handleClick}/>
+          <img src="https://s3.amazonaws.com/spec-imagehosting/combined+arrow.png" alt="Logo" onClick={this.handleClick}/>
         </Button>
       </div>
     );

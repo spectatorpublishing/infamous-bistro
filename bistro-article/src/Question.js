@@ -14,7 +14,7 @@ class Question extends Component {
       return (
          <div>
          <Prompt>{this.props.children}</Prompt>
-         <PrettyLine><img alt="arrow" src="../asset/Asset 8@10x.png"/></PrettyLine>
+         <PrettyLine><img alt="arrow" src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/></PrettyLine>
          </div>
       );
    }

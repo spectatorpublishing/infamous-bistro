@@ -17,7 +17,7 @@ smoothscroll.polyfill();
 const GlobalStyle = createGlobalStyle`
   @font-face {
      font-family: 'redgar';
-     src: url('assets/Redgar.ttf');
+     src: url('https://s3.amazonaws.com/spec-imagehosting/Redgar.ttf');
   }
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,500');
 
@@ -38,17 +38,17 @@ const GlobalStyle = createGlobalStyle`
 
 `
 const Data = [{
-  background: "assets/E7f8Z_fw.jpeg",
+  background: "https://s3.amazonaws.com/spec-imagehosting/E7f8Z_fw.jpeg",
   filter: "brightness(50%)",
   component: <TitlePage title={"ROOTS, INFLUENCES,"} subtitle={"GOOD FOOD"}/>
 },
 {
-  background: "assets/3WTtONsY.jpeg",
+  background: "https://s3.amazonaws.com/spec-imagehosting/3WTtONsY.jpeg",
   filter: "brightness(50%)",
   component: <SecondPage/>
 },
 {
-  background: "assets/Jo8urKb0.jpeg",
+  background: "https://s3.amazonaws.com/spec-imagehosting/Jo8urKb0.jpeg",
   filter: "brightness(50%)",
   component: <Quote width='60%' scale='1' visibility='visible'
   text='My title used to be general manager, but I didn’t like that. I
@@ -59,22 +59,22 @@ const Data = [{
   quote='- Jelena, Creative Director of Infamous Bistro '> </Quote>
 },
 {
-  background: "assets/Jo8urKb0.jpeg",
+  background: "https://s3.amazonaws.com/spec-imagehosting/aHCUHV5A.jpeg",
   filter: "brightness(50%)",
   component: <FourthPage/>
 },
 {
-  background: "assets/JxC-hreR.jpeg",
+  background: "https://s3.amazonaws.com/spec-imagehosting/JxC-hreR.jpeg",
   filter: "brightness(50%)",
   component: <FifthPage/>
 },
 {
-  background: "assets/MRsfi4Z4.jpeg",
+  background: "https://s3.amazonaws.com/spec-imagehosting/MRsfi4Z4.jpeg",
   filter: "brightness(50%)",
   component: <SixthPage/>
 },
 {
-  background: "assets/JxC-hreR.jpeg",
+  background: "https://s3.amazonaws.com/spec-imagehosting/BEx70rMU.jpeg",
   filter: "brightness(50%)",
   component: <Interview data={[
     {
@@ -100,7 +100,7 @@ const Data = [{
   ]}/>
 },
 {
-  background: "assets/F5TPvFN8.jpeg",
+  background: "https://s3.amazonaws.com/spec-imagehosting/F5TPvFN8.jpeg",
   filter: "brightness(50%)",
   component: <Interview data={[{
     question: "What are some of your favorite foods from Serbia that you feel that you just cannot get done well in New York?",
