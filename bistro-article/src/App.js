@@ -3,9 +3,15 @@ import Quote from './Quote.js';
 import Slide from './Components/Slide';
 import Background from './Components/Background';
 import SecondPage from './PageTwo.js';
+import FourthPage from './PageFour.js';
+import FifthPage from './PageFive.js';
+import SixthPage from './PageSix.js';
 import { createGlobalStyle } from 'styled-components';
 import ParentQuestion from './ParentQuestion.js';
 import TitlePage from './Components/TitlePage';
+import smoothscroll from 'smoothscroll-polyfill';
+
+smoothscroll.polyfill();
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -38,6 +44,11 @@ const Data = [{
 {
   background: "assets/3WTtONsY.jpeg",
   filter: "brightness(50%)",
+  component: <SecondPage/>
+},
+{
+  background: "assets/Jo8urKb0.jpeg",
+  filter: "brightness(50%)",
   component: <Quote width='60%' visibility='visible'
   text='My title used to be general manager, but I didn’t like that. I
   mean, I’m not managing anybody. I see these people every
@@ -49,27 +60,22 @@ const Data = [{
 {
   background: "assets/Jo8urKb0.jpeg",
   filter: "brightness(50%)",
-  component: <div>Test</div>
+  component: <FourthPage/>
 },
 {
-  background: "assets/aHCUHV5A.jpeg",
+  background: "assets/JxC-hreR.jpeg",
   filter: "brightness(50%)",
-  component: <div>Test</div>
+  component: <FifthPage/>
+},
+{
+  background: "assets/MRsfi4Z4.jpeg",
+  filter: "brightness(50%)",
+  component: <SixthPage/>
 },
 {
   background: "assets/JxC-hreR.jpeg",
   filter: "brightness(50%)",
   component: <ParentQuestion></ParentQuestion>
-},
-{
-  background: "assets/MRsfi4Z4.jpeg",
-  filter: "brightness(50%)",
-  component: <SecondPage/>
-},
-{
-  background: "assets/BEx70rMU.jpeg",
-  filter: "brightness(50%)",
-  component: <div>Test</div>
 },
 {
   background: "assets/F5TPvFN8.jpeg",

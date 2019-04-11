@@ -7,11 +7,13 @@ const Wrapper = styled.div`
     width: 51vw;
     font-size: 1.5rem;
     line-height: 3.5rem;
-    font-family: 'merriweatherlight';
+    font-family: 'Roboto';
     color: white;
 
     @media (max-width: 600px) {
-        width: 90vw;
+        width: 80vw;
+        font-size: 1rem;
+        line-height: 1.8rem;
     } 
 `
 
@@ -20,11 +22,17 @@ const Highlight = styled.span`
     font-family: 'redgar';
     font-weight: 100;
     font-size: 2.8rem;
+    line-height: 3.4rem;
     color: white;
-    display: inline-block;
-    margin: -5px 10px;
+    display: inline;
+    margin: 0 10px;
     vertical-align: middle;
     white-space: normal;
+    @media (max-width: 600px) {
+        font-size: 1.3rem;
+        line-height: 1.7rem;
+        margin: 0 3px;
+    }
 `
 
 export class SecondPage extends Component {

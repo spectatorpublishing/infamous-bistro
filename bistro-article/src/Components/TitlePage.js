@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import config from '../config';
+import smoothscroll from 'smoothscroll-polyfill';
+
+smoothscroll.polyfill();
 
 const Title = styled.div`
   font-size : 4.0rem;
@@ -29,12 +32,16 @@ const Titles = styled.div`
 `
 
 const Button = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 1rem;
   display: block;
   left: 0;
   text-align: center;
   width: 100%;
+  z-index: 10;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 const Symbol = styled.div`
   font-family: "redgar", sans-serif;
@@ -66,13 +73,13 @@ const Img = styled.img`
 
 class TitlePage extends Component {
 
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  
-    onClickButton(){
-        window.scrollTo({
-        top: 500,
-        behavior: 'smooth'
-        });
+    handleClick(){
+        window.scrollBy(0, (window.innerHeight+(10 * parseFloat(getComputedStyle(document.documentElement).fontSize))));
     }
 
   render() {
@@ -84,7 +91,7 @@ class TitlePage extends Component {
             <Symbol>& </Symbol><Subheading>{this.props.subtitle}</Subheading>
         </Titles>
         <Button>
-          <img src="assets/combined arrow.png" alt="Logo" onClick={this.onClickButton}/>
+          <img src="assets/combined arrow.png" alt="Logo" onClick={this.handleClick}/>
         </Button>
       </div>
     );

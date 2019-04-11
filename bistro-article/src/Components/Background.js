@@ -9,6 +9,7 @@ const StyledBackground = styled.div`
   filter: ${props => props.filter};
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   transition: background 1s;
 `
 
