@@ -143,7 +143,7 @@ class Interview extends Component {
             {
               index === this.state.active ? <QuoteWrapper><Quote width='100%' scale='1' visibility='visible'
               text={this.state.response}
-              quote='- Jelena, Creative Director of Infamous Bistro '> </Quote></QuoteWrapper> : null
+              quote={this.props.quote}> </Quote></QuoteWrapper> : null
             }
           </div>)
         }
@@ -166,7 +166,7 @@ class Interview extends Component {
       <Column>
         <Quote width='80%' scale='.6' visibility='visible'
   text={this.state.response}
-  quote='- Jelena, Creative Director of Infamous Bistro '> </Quote>
+  quote={this.props.quote}> </Quote>
       </Column>
     </Container>
   }

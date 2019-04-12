@@ -35,6 +35,10 @@ const GlobalStyle = createGlobalStyle`
       monospace;
   }
 
+  #navbar .header-brand2 {
+    filter: invert(1);
+  }
+
 `
 const Data = [{
   background: "https://s3.amazonaws.com/spec-imagehosting/E7f8Z_fw.jpeg",
@@ -78,7 +82,7 @@ const Data = [{
   slideStyle: `
     align-items: stretch;
   `,
-  component: <Interview data={[
+  component: <Interview quote="- Zivko Radojcic, Chef & Owner" data={[
     {
       question: "What are some of your favorite foods from Serbia that you feel that you just cannot get done well in New York?",
       response: "“Well actually, I know this isn’t your question, but I really like Kafana in the Lower East Side. They have certain food that is good, but of course they don’t have everything. I don’t miss that much Balkan food because I can usually make what I miss! One thing I will say is that it’s a mix - each of these places, they do a few things well, and they all do different things well. At Kafana, you get čevapi, at another place you might get begova čorba.When you’re grown and you’ve tasted so many different cultures’ cuisines, I think you tend to miss old flavors less because you’re more open to new flavors.”"
@@ -107,7 +111,7 @@ const Data = [{
   slideStyle: `
     align-items: stretch;
   `,
-  component: <Interview data={[{
+  component: <Interview quote="- Milos Zica, Bartender" data={[{
     question: "What are some of your favorite foods from Serbia that you feel that you just cannot get done well in New York?",
     response: "“Kafana is very good! Barbecue in general, rostilj, is my favorite, and it’s very hard to find here. Maybe a good old sarma. Homemade ajvar is never good in New York either, you can’t get it anywhere the way you can get it at home.”"
   },
