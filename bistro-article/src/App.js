@@ -137,6 +137,7 @@ class App extends Component {
     this.state = {
       background: []
     }
+    this.images = []
     this.updateBackground = this.updateBackground.bind(this)
   }
 
@@ -147,11 +148,13 @@ class App extends Component {
     if (i > 1 && !Data[i - 1].preloaded) {
       let img = new Image()
       img.src = Data[i - 1].background
+      this.images.push(img)
       Data[i - 1].preloaded = true
     }
     if (i < Data.length - 1 && !Data[i + 1].preloaded) {
       let img = new Image()
       img.src = Data[i + 1].background
+      this.images.push(img)
       Data[i + 1].preloaded = true
     }
   }
