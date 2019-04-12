@@ -87,6 +87,9 @@ class Question extends Component {
   }
 
   render() {
+    if (window.innerWidth < 1000) {
+      return <StyledQuestion ref={this.questionRef} className={this.props.active ? "active" : ""}>{this.props.children}</StyledQuestion>
+    }
     return <StyledQuestion ref={this.questionRef} className={this.props.active ? "active" : ""} onMouseEnter={this.handleSelect} onClick={this.handleSelect}>{this.props.children}</StyledQuestion>
   }
 }
