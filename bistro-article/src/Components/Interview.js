@@ -135,15 +135,15 @@ class Interview extends Component {
               index={index}
               handleSelect={this.handleSelect}
               onClick={this.handleSelect}
-              active={index === this.state.active}
+              active={true}
             >
               {i.question}
             </Question>
 
             {
-              index === this.state.active ? <QuoteWrapper><Quote width='100%' scale='1' visibility='visible'
+              <QuoteWrapper><Quote width='100%' scale='1' visibility='visible'
               text={this.state.response}
-              quote={this.props.quote}> </Quote></QuoteWrapper> : null
+              quote={this.props.quote}> </Quote></QuoteWrapper>
             }
           </div>)
         }
