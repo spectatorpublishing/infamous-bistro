@@ -10,8 +10,19 @@ import { createGlobalStyle } from 'styled-components';
 import TitlePage from './Components/TitlePage';
 import smoothscroll from 'smoothscroll-polyfill';
 import Interview from './Components/Interview';
+import styled from 'styled-components';
 
 smoothscroll.polyfill();
+
+let PhotoCredits = styled.div`
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  display: block;
+  margin: 1rem 0;
+  z-index: 1;
+  position: relative;
+`
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -168,6 +179,7 @@ class App extends Component {
         Data.map((i, index) => <Slide key={index} slideStyle={i.slideStyle} index={index} updateBackground={this.updateBackground}>{i.component}</Slide>)
       }
       </div>
+      <PhotoCredits>Photos by Molly Tavoletti</PhotoCredits>
     </div>
   }
 }
