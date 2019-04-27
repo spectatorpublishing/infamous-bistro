@@ -40,7 +40,7 @@ export class FifthPage extends Component {
     return (
         <Wrapper>
         <Wrapper>
-        Chef/owner Zivko Radojcic grew up in Belgrade, Serbia’s capital, and
+        Chef Zivko Radojcic grew up in Belgrade, Serbia’s capital, and
         <Highlight> CAME FROM a family of pastry chefs and cooks. </Highlight>
         <img alt="green-swoop" style={{"width":"50%", "float":"right","display":"block"}} src="https://s3.amazonaws.com/spec-imagehosting/Asset+8%4010x.png"/>
         </Wrapper>

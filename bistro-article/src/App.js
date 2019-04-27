@@ -22,6 +22,8 @@ let PhotoCredits = styled.div`
   margin: 1rem 0;
   z-index: 1;
   position: relative;
+  font-family: 'redgar';
+  font-weight: 100;
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -70,7 +72,7 @@ const Data = [{
   day and, even when we’re not at work, we’re still together and
   hanging out. We’re friends, but we’re also family. I’m not a
   manager of my family.'
-  quote='- Jelena, Creative Director of Infamous Bistro '> </Quote>
+  quote='- Elena, Creative Director of Infamous Bistro '> </Quote>
 },
 {
   background: "https://s3.amazonaws.com/spec-imagehosting/aHCUHV5A.jpeg",
@@ -93,7 +95,7 @@ const Data = [{
   slideStyle: `
     align-items: stretch;
   `,
-  component: <Interview quote="- Zivko Radojcic, Chef & Owner" data={[
+  component: <Interview quote="- Zivko Radojcic, Chef" data={[
     {
       question: "What are some of your favorite foods from Serbia that you feel that you just cannot get done well in New York?",
       response: "“Well actually, I know this isn’t your question, but I really like Kafana in the Lower East Side. They have certain food that is good, but of course they don’t have everything. I don’t miss that much Balkan food because I can usually make what I miss! One thing I will say is that it’s a mix - each of these places, they do a few things well, and they all do different things well. At Kafana, you get čevapi, at another place you might get begova čorba.When you’re grown and you’ve tasted so many different cultures’ cuisines, I think you tend to miss old flavors less because you’re more open to new flavors.”"
@@ -149,24 +151,46 @@ class App extends Component {
       background: []
     }
     this.images = []
+    this.preloaded = []
+    this.preloadedLinks = []
     this.updateBackground = this.updateBackground.bind(this)
+    this.preload = this.preload.bind(this)
+    this.preload.done = true;
+  }
+
+  componentDidMount() {
+    this.images = [...new Set(Data.map(i => i.background))]
+  }
+
+  preload() {
+    if (this.images.length) {
+      this.preload.done = false
+      let nextImage = this.images.shift()
+      if (!this.preloadedLinks.includes(nextImage)) {
+        let img = new Image()
+        img.onload = () => {
+          this.preload()
+        }
+        img.src = nextImage
+        this.preloaded.push(img)
+        this.preloadedLinks.push(img.src)
+      }
+      else this.preload()
+    }
+    else this.preload.done = true
   }
 
   updateBackground(i) {
     this.setState({
       background: Data[i]
     })
-    if (i > 1 && !Data[i - 1].preloaded) {
-      let img = new Image()
-      img.src = Data[i - 1].background
-      this.images.push(img)
-      Data[i - 1].preloaded = true
+    if (i > 1 && !this.preloadedLinks.includes(Data[i - 1].background)) {
+      this.images.unshift(Data[i - 1].background)
+      if (this.preload.done) this.preload()
     }
-    if (i < Data.length - 1 && !Data[i + 1].preloaded) {
-      let img = new Image()
-      img.src = Data[i + 1].background
-      this.images.push(img)
-      Data[i + 1].preloaded = true
+    if (i < Data.length - 1 && !this.preloadedLinks.includes(Data[i + 1].background)) {
+      this.images.unshift(Data[i + 1].background)
+      if (this.preload.done) this.preload()
     }
   }
 
